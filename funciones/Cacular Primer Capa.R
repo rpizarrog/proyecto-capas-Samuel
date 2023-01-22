@@ -19,3 +19,14 @@ f_calcular <- function(variables, ws) {
                pos_final = pos_final, res_final = res_final, 
                suma_parcial = sum(res_parcial), suma_final = sum(res_final)))
 }
+
+
+f_calcular_v2 <- function(variables, ws) {
+  sumas_parciales <- 0
+  sumas_finales <- 0
+  for (v in 1:length(variables)) {
+    sumas_finales[v] <- sum(variables[v] * ws)
+  }
+  
+  return(list(sumas_finales = sumas_finales, suma = sum(sumas_finales)))
+}
